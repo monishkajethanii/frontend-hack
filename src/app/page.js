@@ -90,25 +90,25 @@ const HeroSection = () => {
         </div>
       </section>
       <ProjectsSection />
-      <section className="py-16 md:py-24 bg-white text-black">
+      <section className="sm:py-4 md:px-6 py-14 px-3 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center px-4 py-2 bg-builtwell-light text-builtwell-dark rounded-full mb-6">
-                <Compass className="w-5 h-5 mr-2" />
+              <div className="inline-flex items-center bg-builtwell-light text-builtwell-dark rounded-full mb-6">
+                <Compass className="w-5 h-5 mr-2 text-left" />
                 <span className="font-medium">Our Vision</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
                 Redefining Architecture for Tomorrow's World
               </h2>
-              <p className="text-builtwell-darkgray mb-6">
+              <p className="text-builtwell-darkgray mb-6 text-justify">
                 Our vision is to become the leading architectural firm known for
                 creating spaces that harmoniously blend aesthetic beauty,
                 functional excellence, and environmental responsibility. We
                 envision a future where our designs stand as landmarks of
                 innovation and sustainability.
               </p>
-              <p className="text-builtwell-darkgray">
+              <p className="text-builtwell-darkgray text-justify">
                 We aspire to push boundaries in architectural design, creating
                 spaces that not only meet the present needs but anticipate
                 future demands, setting new standards for what architecture can
@@ -127,7 +127,7 @@ const HeroSection = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 md:py-24 bg-white text-black">
+      <section className="px-6 md:py-14 py-8 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-96 rounded-lg overflow-hidden shadow-xl">
@@ -138,21 +138,21 @@ const HeroSection = () => {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center px-4 py-2 bg-white text-builtwell-dark rounded-full mb-6">
+              <div className="inline-flex items-center py-2 bg-white text-builtwell-dark rounded-full mb-6">
                 <Target className="w-5 h-5 mr-2" />
                 <span className="font-medium">Our Mission</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
                 Crafting Meaningful Spaces Through Excellence
               </h2>
-              <p className="text-builtwell-darkgray mb-6">
+              <p className="text-builtwell-darkgray mb-6 text-justify">
                 Our mission is to deliver architectural solutions that exceed
                 client expectations by combining technical expertise, creative
                 innovation, and sustainable practices. We are committed to
                 understanding each client's unique needs and translating them
                 into designs that inspire and endure.
               </p>
-              <p className="text-builtwell-darkgray">
+              <p className="text-builtwell-darkgray text-justify">
                 Through collaborative engagement with clients, communities, and
                 industry partners, we strive to create spaces that positively
                 impact lives and contribute to a more sustainable and beautiful
@@ -164,7 +164,7 @@ const HeroSection = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 md:py-24 bg-white text-black">
+      <section className="py-6 md:py-14 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
