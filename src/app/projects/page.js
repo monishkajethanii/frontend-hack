@@ -332,7 +332,7 @@ export default function Home() {
                   </div>
 
                   <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white bg-opacity-90 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="bg-white text-gray-900 bg-opacity-90 p-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                       <h3 className="font-light text-lg tracking-wide mb-1">
                         {project.title}
                       </h3>
@@ -401,7 +401,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="w-full md:w-2/5 p-6 md:p-12 overflow-y-auto">
+              <div className="w-full md:w-2/5 p-6 md:p-12 overflow-y-auto pt-22">
                 <div className="max-w-md">
                   <h2 className="text-3xl font-light tracking-tight mb-4 pt-10">
                     {selectedProject.title}

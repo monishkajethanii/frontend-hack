@@ -164,7 +164,7 @@ const navItems = [
 
         {/* Process Section */}
         <section className="py-24">
-          <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="max-w-6xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center bg-white text-black">
             <div className="flex flex-col space-y-6 order-2 md:order-1">
               <h2 className="text-4xl font-light border-b border-gray-300 pb-4">
                 Our Process
@@ -237,7 +237,7 @@ const navItems = [
         </section>
 
         {/* Call to Action */}
-        <section className="py-24 px-8 text-center">
+        <section className="py-24 px-8 text-center bg-white text-black">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-light mb-6">
               Transform Your Vision into Reality
