@@ -198,7 +198,7 @@ const Services = () => {
       </header>
 
       {/* Hero Section */}
-      <div className="pt-28 bg-gradient-to-br from-builtwell-lightgray to-white text-black">
+      <div className="pt-28 bg-gray-100 text-black">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             <div className="overflow-hidden">
@@ -227,7 +227,7 @@ const Services = () => {
       </div>
 
       {/* Services Grid */}
-      <div className="py-20 bg-white" ref={sectionRef}>
+      <div className="py-20 bg-white text-black" ref={sectionRef}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Services Navigation */}
@@ -306,7 +306,7 @@ const Services = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="bg-builtwell-dark text-black pb-10">
+      <div className="bg-builtwell-dark text-black pb-10 bg-white">
         <div className="container mx-auto text-center px-6">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-serif font-bold mb-6">

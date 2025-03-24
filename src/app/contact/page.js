@@ -192,7 +192,7 @@ const ContactSection = () => {
           </div>
         </div>
       </header>
-      <section id="contact" ref={sectionRef} className="py-24">
+      <section id="contact" ref={sectionRef} className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
