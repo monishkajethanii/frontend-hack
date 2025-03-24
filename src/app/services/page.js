@@ -111,6 +111,7 @@ const Services = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "3D Model", href: "/design" },
     { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
     { name: "Testimonials", href: "/testimonials" },

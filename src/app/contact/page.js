@@ -106,6 +106,7 @@ const ContactSection = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "3D Model", href: "/design" },
     { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
     { name: "Testimonials", href: "/section" },
@@ -122,7 +123,7 @@ const ContactSection = () => {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2 z-50">
+          <a href="/" className="flex items-center gap-2 z-50">
             <img
               src="/logo.png"
               width={isScrolled ? 50 : 60}

@@ -194,11 +194,18 @@ export default function Home() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "3D Model", href: "/design" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Testimonials", href: "/section" },
     { name: "Contact Now", href: "/contact" },
   ];
+
+  
+  const titles = projects.map((project) => project.title); // Get project titles
+
+  // Join all titles into a single string with a separator for clarity
+  const titleText = titles.join("  |  ");
 
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -219,7 +226,7 @@ export default function Home() {
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2 z-50">
+          <a href="/" className="flex items-center gap-2 z-50">
             <img
               src="/logo.png"
               width={isScrolled ? 50 : 60}
@@ -291,6 +298,20 @@ export default function Home() {
       </header>
 
       <main className="pt-22 pb-16">
+      <div className="circular-scroll-container">
+        <div className="circular-scroll-text-wrapper">
+          <div className="circular-scroll-text">
+            {titleText} {/* First loop of text */}
+          </div>
+          <div className="circular-scroll-text">
+            {titleText} {/* Second loop of text */}
+          </div>
+          <div className="circular-scroll-text">
+            {titleText} {/* Second loop of text */}
+          </div>
+          
+        </div>
+      </div>
         <div className="container mx-auto px-4 mb-6">
           <div className="flex flex-wrap justify-center gap-2 md:gap-6 uppercase text-xs md:text-sm tracking-wider">
             {categories.map((category) => (

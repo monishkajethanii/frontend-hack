@@ -78,14 +78,14 @@ const HeroSection = () => {
               style={{ "--index": "3" }}
             >
               <a
-                href="#projects"
+                href="/design"
                 className="px-6 py-3 bg-white text-black bg-builtwell-accent text-builtwell-dark rounded font-medium flex items-center justify-center gap-2 hover:bg-white transition-colors duration-300 group"
               >
-                Explore Our Projects
+                Try Our Model
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="px-6 py-3 border border-white text-white rounded font-medium flex items-center justify-center hover:bg-white hover:text-builtwell-dark transition-colors duration-300"
               >
                 Contact Us

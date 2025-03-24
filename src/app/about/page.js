@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useRef, useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
@@ -36,41 +36,80 @@ const staggerContainer = {
 };
 
 export default function About() {
-    // header ka logic 
-const [isScrolled, setIsScrolled] = useState(false);
-const [isOpen, setIsOpen] = useState(false);
+  const teamMembers = [
+    {
+      name: "Elena Rodriguez",
+      role: "Principal Architect",
+      bio: "With over 15 years of experience, Elena specializes in sustainable urban design and has led award-winning projects across three continents.",
+      expertise: ["Urban Planning", "Sustainable Architecture", "Green Design"],
+      imageSrc: "/architect1.jpg",
+    },
+    {
+      name: "Marcus Chen",
+      role: "Design Director",
+      bio: "A visionary architect known for innovative structural solutions and cutting-edge architectural concepts that challenge traditional design boundaries.",
+      expertise: [
+        "Innovative Design",
+        "Structural Engineering",
+        "Contemporary Architecture",
+      ],
+      imageSrc: "/architect2.jpg",
+    },
+    {
+      name: "Sophia Nkosi",
+      role: "Senior Architect",
+      bio: "Passionate about adaptive reuse and community-centered design, Sophia brings a global perspective to every project she undertakes.",
+      expertise: [
+        "Community Design",
+        "Historic Preservation",
+        "Cultural Architecture",
+      ],
+      imageSrc: "/architect3.jpg",
+    },
+    {
+      name: "Daniel Kim",
+      role: "Technical Architect",
+      bio: "A master of technical precision and digital innovation, Daniel integrates cutting-edge technology with architectural design.",
+      expertise: ["Digital Architecture", "3D Modeling", "Technical Design"],
+      imageSrc: "/architect4.jpg",
+    },
+  ];
+  // header ka logic
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (window.scrollY > 10) {
-      setIsScrolled(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
     } else {
-      setIsScrolled(false);
+      document.body.style.overflow = "unset";
     }
-  };
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, []);
-
-useEffect(() => {
-  if (isOpen) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "unset";
-  }
-  return () => {
-    document.body.style.overflow = "unset";
-  };
-}, [isOpen]);
-
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "Projects", href: "/projects" },
-  { name: "Services", href: "/services" },
-  { name: "Testimonials", href: "/section" },
-  { name: "Contact Now", href: "/contact" },
-];
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "3D Model", href: "/design" },
+    { name: "Projects", href: "/projects" },
+    { name: "Services", href: "/services" },
+    { name: "Testimonials", href: "/section" },
+    { name: "Contact Now", href: "/contact" },
+  ];
   return (
     <>
       <Head>
@@ -91,7 +130,7 @@ const navItems = [
           }`}
         >
           <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-            <a href="#" className="flex items-center gap-2 z-50">
+            <a href="/" className="flex items-center gap-2 z-50">
               <img
                 src="/logo.png"
                 width={isScrolled ? 50 : 60}
@@ -212,22 +251,31 @@ const navItems = [
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {Array.from({ length: 4 }).map((_, index) => (
-                <div key={index} className="group">
+              {teamMembers.map((member) => (
+                <div key={member.name} className="group">
                   <div className="relative h-96 overflow-hidden rounded-lg">
                     <div className="w-full h-full bg-gray-700">
                       <Image
-                        src={`/architect${index + 1}.jpg`}
-                        alt={`Team member ${index + 1}`}
+                        src={member.imageSrc}
+                        alt={`${member.name} - ${member.role}`}
                         fill
                         className="transition-transform duration-500 group-hover:scale-105 object-cover"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                      <h3 className="text-xl font-medium">
-                        Team Member {index + 1}
-                      </h3>
-                      <p className="text-gray-300">Senior Architect</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                      <h3 className="text-xl font-medium">{member.name}</h3>
+                      <p className="text-gray-300">{member.role}</p>
+                      <p className="text-sm text-gray-400 mt-2">{member.bio}</p>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {member.expertise.map((skill) => (
+                          <span
+                            key={skill}
+                            className="bg-gray-700 text-xs px-2 py-1 rounded-full"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

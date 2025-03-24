@@ -77,7 +77,7 @@ const ProjectGrid = () => {
                 
                 <div className={`mt-3 overflow-hidden transition-all duration-500 ${hoveredItem === project.id ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <p className="text-sm text-white font-extrabold">Innovative architectural design that harmonizes with its environment</p>
-                  <a href="#" className="mt-3 inline-flex items-center text-sm font-medium text-builtwell-accent group rounded-3xl pl-3 pr-3 pt-1 pb-1 text-black bg-amber-300">
+                  <a href="/projects" className="mt-3 inline-flex items-center text-sm font-medium text-builtwell-accent group rounded-3xl pl-3 pr-3 pt-1 pb-1 text-black bg-amber-300">
                     View Project 
                     <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
                   </a>
