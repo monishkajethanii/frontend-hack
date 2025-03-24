@@ -194,9 +194,9 @@ export default function Home() {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Testimonials", href: "#testimonials" },
+    { name: "About", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Testimonials", href: "/section" },
     { name: "Contact Now", href: "/contact" },
   ];
 
@@ -263,7 +263,7 @@ export default function Home() {
             ) : (
               <Menu
                 size={24}
-                className={isScrolled ? "text-builtwell-dark" : "text-white"}
+                className={isScrolled ? "text-builtwell-dark" : "text-black"}
               />
             )}
           </button>

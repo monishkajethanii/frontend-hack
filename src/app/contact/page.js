@@ -107,9 +107,9 @@ const ContactSection = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Projects", href: "/projects" },
-    { name: "About", href: "#about" },
-    { name: "Testimonials", href: "#testimonials" },
-    { name: "Services", href: "#services" },
+    { name: "About", href: "/about" },
+    { name: "Testimonials", href: "/section" },
+    { name: "Services", href: "/services" },
   ];
 
   return (
@@ -166,7 +166,7 @@ const ContactSection = () => {
             ) : (
               <Menu
                 size={24}
-                className={isScrolled ? "text-builtwell-dark" : "text-white"}
+                className={isScrolled ? "text-builtwell-dark" : "text-black"}
               />
             )}
           </button>

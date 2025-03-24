@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import NavBar from "./Nav";
 import ProjectsSection from "./Projects";
-
 const HeroSection = () => {
   const heroRef = useRef(null);
   const imageRef = useRef(null);
