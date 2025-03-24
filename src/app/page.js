@@ -234,7 +234,7 @@ const HeroSection = () => {
       </section>
 
       {/* cta section */}
-      <section className=" md:py-24 bg-builtwell-dark text-black">
+      <section className="bg-builtwell-dark text-black sm:pb-10">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
             Ready to Build Your Vision?
@@ -252,7 +252,7 @@ const HeroSection = () => {
         </div>
       </section>
 
-      <footer className="bg-black text-white p-4 text-center">
+      <footer className="bg-black text-white p-4 text-center mt-10 sm:mt-0">
             <p>© 2025 BuiltWell Architecture. All Rights Reserved.</p>
       </footer> 
     </>

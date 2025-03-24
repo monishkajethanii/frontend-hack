@@ -31,12 +31,12 @@ const NavBar = () => {
   }, [isOpen]);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Testimonials", href: "#testimonials" },
-    { name: "Contact Now", href: "#contact" },
+    { name: "Contact Now", href: "/contact" },
   ];
 
   return (
