@@ -173,6 +173,7 @@ const Services = () => {
                 className={isScrolled ? "text-builtwell-dark" : "text-black"}
               />
             )}
+            
           </button>
         </div>
 
@@ -198,7 +199,7 @@ const Services = () => {
       </header>
 
       {/* Hero Section */}
-      <div className="pt-28 bg-gray-100 text-black">
+      <div className="pt-28 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             <div className="overflow-hidden">
