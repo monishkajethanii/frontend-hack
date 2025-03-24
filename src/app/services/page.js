@@ -198,7 +198,7 @@ const Services = () => {
       </header>
 
       {/* Hero Section */}
-      <div className="pt-28 bg-gradient-to-br from-builtwell-lightgray to-white">
+      <div className="pt-28 bg-gradient-to-br from-builtwell-lightgray to-white text-black">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             <div className="overflow-hidden">

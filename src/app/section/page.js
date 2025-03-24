@@ -159,16 +159,16 @@ const TestimonialsSection = () => {
           </div>
         </div>
       </header>
-      <div className="text-center mt-24">
+      <div className="text-center mt-24 bg-white">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           What Our Clients Say
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 max-w-2xl mx-auto pb-5 sm:pb-0">
           Testimonials that reflect our commitment to exceptional architectural
           design and transformative spaces.
         </p>
       </div>
-      <section className="relative min-h-screen w-full flex overflow-hidden">
+      <section className="relative min-h-screen w-full flex overflow-hidden bg-white">
         <div className="relative z-10 max-w-5xl mx-auto px-8 flex">
           <div className="w-full grid md:grid-cols-2 gap-12 items-center">
             {/* Client Image Section */}
