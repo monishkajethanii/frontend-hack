@@ -27,7 +27,7 @@ const ProjectGrid = () => {
   ];
 
   return (
-    <div className="py-16 bg-builtwell-light">
+    <div className="py-16 bg-builtwell-light bg-white text-black">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start justify-between mb-12 space-y-6 md:space-y-0">
           <div className="max-w-lg">

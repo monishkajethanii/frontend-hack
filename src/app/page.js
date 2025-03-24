@@ -74,7 +74,7 @@ const HeroSection = () => {
             >
               <a
                 href="#projects"
-                className="px-6 py-3 bg-white bg-builtwell-accent text-builtwell-dark rounded font-medium flex items-center justify-center gap-2 hover:bg-white transition-colors duration-300 group"
+                className="px-6 py-3 bg-white text-black bg-builtwell-accent text-builtwell-dark rounded font-medium flex items-center justify-center gap-2 hover:bg-white transition-colors duration-300 group"
               >
                 Explore Our Projects
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -90,7 +90,7 @@ const HeroSection = () => {
         </div>
       </section>
       <ProjectsSection />
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -127,7 +127,7 @@ const HeroSection = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 md:py-24 bg-builtwell-light">
+      <section className="py-16 md:py-24 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-96 rounded-lg overflow-hidden shadow-xl">
@@ -164,7 +164,7 @@ const HeroSection = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
@@ -233,7 +233,7 @@ const HeroSection = () => {
       </section>
 
       {/* cta section */}
-      <section className="bg-builtwell-dark text-black sm:pb-10">
+      <section className="bg-white text-black sm:pb-10">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
             Ready to Build Your Vision?
