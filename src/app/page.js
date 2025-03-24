@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+
 import {
   Compass,
   Target,
@@ -38,11 +39,15 @@ const HeroSection = () => {
       >
         <NavBar />
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <img
+          <video
             ref={imageRef}
-            src="/bg.jpg"
+            src="/bg.mp4"
+            loop
+            autoPlay
+            muted
+            playsInline
             alt="Modern Architecture"
-            className="w-full h-[120%] object-cover object-center"
+            className="lg:w-full h-[120%] object-cover object-center blur-xs"
           />
           <div className="absolute inset-0 bg-opacity-40"></div>
         </div>
@@ -244,7 +249,7 @@ const HeroSection = () => {
           </p>
           <a
             href="/contact"
-            className="inline-block px-6 py-3 bg-builtwell-accent text-white bg-black rounded-md hover:bg-builtwell-accent/90 transition-colors duration-300 font-medium"
+            className="inline-block px-6 py-3 mb-3 bg-builtwell-accent text-white bg-black rounded-md hover:bg-builtwell-accent/90 transition-colors duration-300 font-medium"
           >
             Contact Our Team
           </a>
@@ -252,8 +257,8 @@ const HeroSection = () => {
       </section>
 
       <footer className="bg-black text-white p-4 text-center mt-10 sm:mt-0">
-            <p>© 2025 BuiltWell Architecture. All Rights Reserved.</p>
-      </footer> 
+        <p>© 2025 BuiltWell Architecture. All Rights Reserved.</p>
+      </footer>
     </>
   );
 };

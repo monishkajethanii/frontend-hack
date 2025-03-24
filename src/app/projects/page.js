@@ -401,7 +401,7 @@ export default function Home() {
                 ))}
               </div>
 
-              <div className="w-full md:w-2/5 p-6 md:p-12 overflow-y-auto pt-22">
+              <div className="w-full md:w-2/5 p-6 md:p-12 overflow-y-auto pt-30">
                 <div className="max-w-md">
                   <h2 className="text-3xl font-light tracking-tight mb-4 pt-10">
                     {selectedProject.title}

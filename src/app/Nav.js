@@ -57,9 +57,7 @@ const NavBar = () => {
             className="transition-all duration-300"
           />
           <span
-            className={`text-xl sm:text-2xl font-serif font-bold transition-colors duration-300 text-gray-400 ${
-              isScrolled ? "text-gray-800" : "text-black"
-            }`}
+            className={`text-xl sm:text-2xl font-serif font-bold transition-colors duration-300 text-black`}
           >
             BuiltWell
           </span>
@@ -70,8 +68,8 @@ const NavBar = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`hover:text-builtwell-accent transition-colors duration-300 text-base lg:text-lg font-medium ${
-                isScrolled ? "text-gray-800" : "text-gray-200"
+              className={`hover:text-builtwell-accent transition-colors duration-300 text-base lg:text-lg ${
+                isScrolled ? "text-gray-800" : "text-white font-bold"
               }`}
             >
               {item.name}

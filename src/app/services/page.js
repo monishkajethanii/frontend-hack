@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { Building2, Landmark, TreePine, MapPin, Menu, X } from "lucide-react";
+import { Building2, Landmark, TreePine, MapPin, Menu, X, Send } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
@@ -10,45 +11,45 @@ const services = [
       "Transforming living spaces into personalized sanctuaries that reflect your unique lifestyle and aesthetic vision.",
     details: [
       "Custom Home Design",
-      "Renovation & Remodeling",
-      "Interior Space Planning",
-      "Sustainable Living Solutions",
+      "Comprehensive Renovation",
+      "Innovative Space Planning",
+      "Eco-Conscious Living Solutions",
     ],
   },
   {
     icon: Landmark,
     title: "Commercial Architecture",
     description:
-      "Innovative designs that blend functionality, brand identity, and cutting-edge architectural principles.",
+      "Innovative designs that seamlessly blend functionality, brand identity, and cutting-edge architectural principles.",
     details: [
-      "Corporate Office Spaces",
-      "Retail Environment Design",
-      "Mixed-Use Developments",
-      "Adaptive Reuse Projects",
+      "Strategic Office Environments",
+      "Dynamic Retail Spaces",
+      "Integrated Mixed-Use Developments",
+      "Creative Adaptive Reuse Projects",
     ],
   },
   {
     icon: TreePine,
     title: "Sustainable Design",
     description:
-      "Pioneering eco-friendly architectural solutions that minimize environmental impact while maximizing human experience.",
+      "Pioneering eco-friendly architectural solutions that minimize environmental impact while maximizing human experience and well-being.",
     details: [
-      "Green Building Certification",
-      "Energy-Efficient Design",
-      "Renewable Materials Selection",
-      "Biophilic Design Strategies",
+      "Advanced Green Building Certification",
+      "High-Performance Energy Design",
+      "Innovative Renewable Materials",
+      "Holistic Biophilic Design Strategies",
     ],
   },
   {
     icon: MapPin,
     title: "Urban Planning",
     description:
-      "Holistic urban design that reimagines spaces, connects communities, and creates meaningful urban landscapes.",
+      "Holistic urban design that reimagines spaces, connects communities, and creates meaningful, vibrant urban landscapes.",
     details: [
-      "Master Planning",
-      "Community Development",
-      "Infrastructure Integration",
-      "Spatial Connectivity Solutions",
+      "Comprehensive Master Planning",
+      "Community-Centered Development",
+      "Intelligent Infrastructure Integration",
+      "Strategic Spatial Connectivity Solutions",
     ],
   },
 ];
@@ -56,53 +57,45 @@ const services = [
 const Services = () => {
   const [activeService, setActiveService] = useState(services[0]);
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const sectionRef = useRef(null);
 
+  // Consolidated scroll and menu effects
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    const handleEscapeKey = (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        setIsMenuOpen(false);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("keydown", handleEscapeKey);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
     return () => {
-      document.body.style.overflow = "unset";
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleEscapeKey);
     };
-  }, [isOpen]);
+  }, [isMenuOpen]);
 
-  const navItems = [
-    { name: "Home", href: "/" },
-    { name: "Projects", href: "/projects" },
-    { name: "About", href: "/about" },
-    { name: "Testimonials", href: "/section" },
-    { name: "Contact Now", href: "/contact" },
-  ];
+  // Accessibility-improved menu toggle effect
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
+  }, [isMenuOpen]);
 
+  // Intersection Observer for section visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect();
         }
       },
-      {
-        threshold: 0.1,
-      }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -116,17 +109,27 @@ const Services = () => {
     };
   }, []);
 
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Projects", href: "/projects" },
+    { name: "About", href: "/about" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Contact", href: "/contact" },
+  ];
+
   return (
-    <div className="">
+    <div className="relative">
+      {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? "bg-white/90 backdrop-blur-sm shadow-md py-2"
             : "bg-white/90 py-4"
         }`}
+        aria-label="Main Navigation"
       >
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
-          <a href="#" className="flex items-center gap-2 z-50">
+          <Link href="/" className="flex items-center gap-2 z-50">
             <img
               src="/logo.png"
               width={isScrolled ? 50 : 60}
@@ -135,17 +138,18 @@ const Services = () => {
               className="transition-all duration-300"
             />
             <span
-              className={`text-xl sm:text-2xl font-serif font-bold transition-colors duration-300 text-gray-400 ${
+              className={`text-xl sm:text-2xl font-serif font-bold transition-colors duration-300 ${
                 isScrolled ? "text-gray-800" : "text-gray-800"
               }`}
             >
               BuiltWell
             </span>
-          </a>
+          </Link>
 
-          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-8" aria-label="Desktop Menu">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className={`hover:text-builtwell-accent transition-colors duration-300 text-base lg:text-lg font-medium ${
@@ -153,16 +157,19 @@ const Services = () => {
                 }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
+          {/* Mobile Menu Toggle */}
           <button
             className="md:hidden focus:outline-none z-50"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? (
+            {isMenuOpen ? (
               <X
                 size={24}
                 className={isScrolled ? "text-builtwell-dark" : "text-black"}
@@ -173,33 +180,34 @@ const Services = () => {
                 className={isScrolled ? "text-builtwell-dark" : "text-black"}
               />
             )}
-            
           </button>
         </div>
 
-        {/* mobile navigation */}
+        {/* Mobile Navigation */}
         <div
+          id="mobile-menu"
           className={`md:hidden fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
+          aria-hidden={!isMenuOpen}
         >
           <div className="flex flex-col justify-center items-end pr-2 space-y-6 pt-16 text-black">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-builtwell-darkgray hover:text-builtwell-accent transition-colors duration-300 text-lg font-medium"
-                onClick={() => setIsOpen(false)}
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <div className="pt-28 bg-white text-black">
+      <section className="pt-28 bg-white text-black">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             <div className="overflow-hidden">
@@ -225,10 +233,10 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Services Grid */}
-      <div className="py-20 bg-white text-black" ref={sectionRef}>
+      {/* Services Section */}
+      <section className="py-20 bg-white text-black" ref={sectionRef}>
         <div className="container mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Services Navigation */}
@@ -236,6 +244,9 @@ const Services = () => {
               {services.map((service, index) => (
                 <div
                   key={service.title}
+                  role="button"
+                  tabIndex={0}
+                  aria-selected={activeService.title === service.title}
                   className={`
                     cursor-pointer p-6 rounded-lg border-2 border-gray-200 transition-all duration-300
                     ${
@@ -247,6 +258,7 @@ const Services = () => {
                   `}
                   style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
                   onClick={() => setActiveService(service)}
+                  onKeyPress={(e) => e.key === 'Enter' && setActiveService(service)}
                 >
                   <div className="flex items-center mb-4">
                     <service.icon
@@ -288,15 +300,15 @@ const Services = () => {
                 {activeService.description}
               </p>
               <div className="space-y-4">
-                <h4 className="text-xl font-serif font-bold text-builtwell-dark mb-4">
+                <h4 className="text-xl font-serif font-bold text-gray-900 mb-4">
                   Our Approach Includes:
                 </h4>
                 {activeService.details.map((detail) => (
                   <div
                     key={detail}
-                    className="flex items-center text-builtwell-darkgray"
+                    className="flex items-center text-gray-800"
                   >
-                    <div className="w-3 h-3 bg-builtwell-accent rounded-full mr-4"></div>
+                    <div className="w-3 h-3 bg-black rounded-full mr-4"></div>
                     <span className="text-base">{detail}</span>
                   </div>
                 ))}
@@ -304,10 +316,10 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Call to Action */}
-      <div className="bg-builtwell-dark text-black pb-10 bg-white">
+      {/* CTA Section */}
+      <section className="bg-builtwell-dark text-black pb-10 bg-white">
         <div className="container mx-auto text-center px-6">
           <div className="max-w-3xl mx-auto">
             <h3 className="text-3xl font-serif font-bold mb-6">
@@ -318,15 +330,16 @@ const Services = () => {
               team is dedicated to creating spaces that inspire, innovate, and
               exceed expectations.
             </p>
-            <a
+            <Link
               href="/contact"
-              className="inline-block bg-builtwell-accent text-builtwell-dark bg-black text-white px-8 py-3 rounded hover:bg-white transition-colors duration-300 font-medium"
+              className="bg-builtwell-accent text-builtwell-dark bg-black text-white px-8 py-3 rounded hover:bg-white transition-colors duration-300 font-medium flex items-center justify-center gap-2 max-w-sm mx-auto"
             >
+              <Send size={20} />
               Schedule Consultation
-            </a>
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
