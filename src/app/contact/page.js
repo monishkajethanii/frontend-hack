@@ -209,7 +209,7 @@ const ContactSection = () => {
 
               <div className="overflow-hidden">
                 <h2
-                  className={`text-3xl md:text-4xl font-sans font-bold mb-6 ${
+                  className={`text-3xl md:text-4xl font-sans font-bold mb-6 text-black ${
                     isVisible ? "animate-slide-in-left" : "opacity-0"
                   }`}
                   style={{ "--index": "1" }}
@@ -255,7 +255,7 @@ const ContactSection = () => {
             </div>
 
             <div
-              className={`bg-gray-100 p-8 rounded-lg ${
+              className={`bg-gray-100 p-8 rounded-lg text-black ${
                 isVisible ? "animate-fade-in" : "opacity-0"
               }`}
               style={{ "--index": "6" }}
@@ -298,7 +298,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-builtwell-lightgray rounded-lg focus:outline-none focus:ring-2 focus:ring-builtwell-accent"
+                    className="w-full px-4 py-3 border border-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-builtwell-accent"
                   />
                 </div>
 
