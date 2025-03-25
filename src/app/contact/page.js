@@ -193,7 +193,11 @@ const ContactSection = () => {
           </div>
         </div>
       </header>
-      <section id="contact" ref={sectionRef} className="py-24 bg-white text-black">
+      <section
+        id="contact"
+        ref={sectionRef}
+        className="py-24 bg-white text-black"
+      >
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
@@ -318,7 +322,9 @@ const ContactSection = () => {
                     required
                     className="w-full px-4 py-3 border border-builtwell-lightgray rounded-lg focus:outline-none focus:ring-2 focus:ring-builtwell-accent"
                   >
-                    <option value="" className="text-gray-400">Select a service</option>
+                    <option value="" className="text-gray-400">
+                      Select a service
+                    </option>
                     <option value="architectural-design">
                       Architectural Design
                     </option>
@@ -332,6 +338,39 @@ const ContactSection = () => {
                     <option value="interior-design">Interior Design</option>
                     <option value="project-management">
                       Project Management
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="contactperson"
+                    className="block text-sm font-bold text-builtwell-darkgray mb-1"
+                  >
+                    Service Person
+                  </label>
+                  <select
+                    id="contactperson"
+                    name="contactperson"
+                    value={formData.contactperson}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-builtwell-lightgray rounded-lg focus:outline-none focus:ring-2 focus:ring-builtwell-accent"
+                  >
+                    <option value="" className="text-gray-400">
+                      Select a service person
+                    </option>
+                    <option value="architectural-design">
+                      Daniel Kim - Technical Architect
+                    </option>
+                    <option value="commercial-architecture">
+                      Sophia Nkosi - Senior Architect
+                    </option>
+                    <option value="residential-architecture">
+                      Marcus Chen - Design Director
+                    </option>
+                    <option value="landscape-design">
+                      Elena Rodriguez - Principle Director
                     </option>
                   </select>
                 </div>
