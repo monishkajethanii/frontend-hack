@@ -114,7 +114,7 @@ const Services = () => {
     { name: "3D Model", href: "/design" },
     { name: "Projects", href: "/projects" },
     { name: "About", href: "/about" },
-    { name: "Testimonials", href: "/testimonials" },
+    { name: "Testimonials", href: "/section" },
     { name: "Contact", href: "/contact" },
   ];
 
